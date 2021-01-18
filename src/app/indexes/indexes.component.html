@@ -1,0 +1,61 @@
+
+<div class="mat-elevation-z8" style="width: 46%; margin: 8rem auto;">
+    <table mat-table class="full-width-table" matSort aria-label="Elements">
+      
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="logo">
+        <th mat-header-cell *matHeaderCellDef ></th>
+        <td mat-cell *matCellDef="let coin"><img src="{{coin.logo}}" alt=""></td>
+      </ng-container>
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Name</th>
+        <td mat-cell [style.color]="coin.color" *matCellDef="let coin">{{coin.name}}</td>
+      </ng-container>
+  
+      <!-- 1M Column -->
+      <ng-container matColumnDef="change_1m_amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Change 1 month</th>
+        <td mat-cell *matCellDef="let coin">{{coin.change_1m_amount | number:'1.1-3'}} <span class="unitpercent" [style.color]='getColor(coin.change_1m)'>{{coin.change_1m | number: '1.1-1'}}</span></td>
+      </ng-container>
+  
+      <!-- 1W Column -->
+      <ng-container matColumnDef="change_1w_amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Change 1 Week</th>
+        <td mat-cell *matCellDef="let coin">{{coin.change_1w_amount | number:'1.1-3'}} <span class="unitpercent" [style.color]='getColor(coin.change_1w)'>{{coin.change_1w | number: '1.1-1'}}</span></td>
+      </ng-container>
+      <!-- 1Y Column -->
+      <ng-container matColumnDef="change_1y_amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Change 1 Year</th>
+        <td mat-cell *matCellDef="let coin">{{coin.change_1y_amount | number:'1.1-3'}} <span class="unitpercent" [style.color]='getColor(coin.change_1y)'>{{coin.change_1y | number: '1.1-1'}}</span></td>
+      </ng-container>
+      <!-- 24h Column -->
+      <ng-container matColumnDef="change_24h_amount">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Change last 24 hours</th>
+        <td mat-cell *matCellDef="let coin">{{coin.change_24h_amount | number:'1.1-3'}} <span class="unitpercent" [style.color]='getColor(coin.change_24h)'>{{coin.change_24h | number: '1.1-1'}}</span></td>
+      </ng-container>
+
+      <!-- Avg Price Column -->
+      <ng-container matColumnDef="avg_price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Average Price</th>
+        <td mat-cell *matCellDef="let coin">{{coin.avg_price}}</td>
+      </ng-container>
+      
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header >Symbol</th>
+        <td mat-cell *matCellDef="let coin">{{coin.symbol}}</td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let coin; columns: displayedColumns;"></tr>
+    </table>
+  
+    <mat-paginator #paginator
+        [length]="dataSource?.filteredData.length"
+        [pageIndex]="0"
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 20, 50, 100]">
+    </mat-paginator>
+  </div>
+  

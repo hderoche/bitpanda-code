@@ -1,0 +1,5 @@
+.full-width-table {
+  width: 100%;
+}
+.unitpercent {font-size: 0.9em;}
+.unitpercent:after {content: ' %'; opacity:0.75; font-size:0.8em}    

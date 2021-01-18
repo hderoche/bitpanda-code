@@ -1,0 +1,38 @@
+
+<button mat-button [matMenuTriggerFor]="menu" class="menu-hb navbar"><mat-icon>menu</mat-icon></button>
+<mat-menu #menu="matMenu">
+<button mat-menu-item class="navbtn" routerLink="/">
+    Home
+</button>
+
+<button mat-menu-item class="navbtn" routerLink="/coins">
+    Cryptocoins
+</button>
+
+<button mat-menu-item class="navbtn" routerLink="/commodities">
+    Commodities
+</button>
+
+
+<button mat-menu-item  class="navbtn" routerLink="/indexes">
+    Indexes
+</button>
+</mat-menu>
+
+<div class="navbar nav-dir menu">
+    <button mat-button class="navbtn" routerLink="/">
+        Home
+    </button>
+
+    <button mat-button class="navbtn" routerLink="/coins">
+        Cryptocoins
+    </button>
+
+    <button mat-button class="navbtn" routerLink="/commodities">
+        Commodities
+    </button>
+    
+    <button mat-button  class="navbtn" routerLink="/indexes">
+        Indexes
+    </button>
+</div>

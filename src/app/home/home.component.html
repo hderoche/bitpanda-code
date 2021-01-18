@@ -1,0 +1,79 @@
+<div class="hero-caption bg-image">
+
+    <div class="container hero nav-dir">
+        <div class="hero-text item">
+            <h2 >
+                Invest with us
+            </h2>
+            <p>
+                Discover cryptocurrencies
+            </p>
+            <button mat-button class="hero-btn mat-elevation-z8">Learn More</button>
+        </div>
+        <div class="item hero-box">
+            <img src="../../assets/bg2.png" alt="" class="hero-img" style="margin: auto;">
+        </div>
+    </div>
+</div>
+<section id="page-content">
+    <br>
+    <mat-card style="width: 30%; margin: auto;" class="mat-elevation-z8">
+        <mat-card-title>Currencies accepted</mat-card-title>
+        <mat-card-content>
+            <p style="margin-top: 5rem;">All the currencies accepted by the exchange :</p>
+            <div *ngFor="let img of logo" class="currencies">
+                <img src="{{img}}" alt="" style="flex: 1 1 auto">
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+<div style="text-align: center; margin-top: 3rem">
+    <h1>You can have a look at the price of cryptocurrencies</h1>
+    <h2 style="padding-bottom: 1rem;">See more products</h2>
+
+    <div class="menu">
+        <app-coins></app-coins>
+    </div>
+    <div class="menu-hb">
+        <button mat-button style="background-color: #1D0BB8; color: #fff;" routerLink="/coins">See coins in their own tab</button>
+    </div>
+</div>
+    <br>
+    <mat-card style="width: 30%; margin: auto;" class="mat-elevation-z8">
+        <mat-card-title>Once Signed-in</mat-card-title>
+        <mat-card-content>
+            <p style="text-align: left; margin-left: 25%">
+                You can easily pick your favorite coins
+                <br>Buy them 
+                <br>And support the project
+            </p>
+            <button mat-button class="btn">Join us</button>
+        </mat-card-content>
+    </mat-card>
+    <p><br></p>
+    
+    <mat-card style="margin: 1rem; width: 30%; margin: auto;" class="mat-elevation-z8">
+        <mat-card-title>About me</mat-card-title>
+        <mat-card-content>
+            <ul>
+                <li style="text-align: center;">Hugo Deroche</li>
+                <li><div style="display: flex; align-items: center; justify-content: center;"><img src="../../assets/LI-In-Bug.png" alt="" style="height: 32px; width: auto; padding-right: 1rem;"><button mat-button style="background-color: #1D0BB8; color: #fff;" onClick="window.open('//linkedin.com/in/hugo-deroche')"> My LinkedIn</button></div></li>
+                <li></li>
+                <li><div style="display: flex; align-items: center; justify-content: center;"><img src="../../assets/GitHub-Mark/PNG/GitHub-Mark-32px.png" style="padding-right: 1rem;" alt=""><button mat-button style="background-color: #1D0BB8; color: #fff;" onClick="window.open('//github.com/hderoche')">My Github</button></div></li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+    <p><br></p>
+
+</section>
+<section id="footer">
+<div class="footer">
+    <div class="footer-flex" style="color: #fff !important; background-color: #000000; margin: auto; padding-top: 2rem;">
+        This angular project uses the data from the Bitpanda endpoint.
+        <br>
+        This project does not intend to be used other than for the purpose of intership interview.
+        <br>
+        <img src="../../assets/bitpanda.svg" alt="" style="height: auto; width: 30%;">
+    </div>
+</div>
+</section>
